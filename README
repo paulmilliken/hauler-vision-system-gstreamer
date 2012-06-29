@@ -1,0 +1,21 @@
+This program displays an RTSP video stream from an Axis camera.  More than
+one camera is allowed and user can switch between camera views.  Currently,
+the program can be configured to include digital zoom, pan and tilt and 
+digital lighten and darken.  A record-to-disk option is also available.
+
+To do:
+  * Use optical lightening and darkening via cgi interface instead of digitally
+  * Explore mechanical PTZ
+  * Set up Linux OS so system starts on powerup like an appliance rather than
+	a development system
+
+This code was developed at Scion as part of FFR's hauler-vision project to
+allow hauler operators to view live video from cameras in the cutover and on
+the tailhold.  It will also be used as part of a tele-operation system for an
+felling/bunching excavator.
+
+The Axis P1347 camera appears to be capable of streaming H.264 encoded video up
+to resolutions of 2560x1920.  However, a resolution of 1600x1200 is the highest
+that I got to work with mjpeg encoding.  The latency of H.264 encoding is too
+high for our application so we'll run with mjpeg at a lower resolution.  This
+means we can't digitally zoom as much as I would have liked.
